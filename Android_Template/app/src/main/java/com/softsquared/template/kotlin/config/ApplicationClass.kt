@@ -3,6 +3,8 @@ package com.softsquared.template.kotlin.config
 import android.app.Application
 import android.content.SharedPreferences
 import android.util.Log
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,7 +13,7 @@ import java.util.concurrent.TimeUnit
 
 // 앱이 실행될때 1번만 실행이 됩니다.
 class ApplicationClass : Application() {
-    val API_URL = "https://edu-api-test.softsquared.com/"
+    val API_URL = "https://www.sandy1017.shop/"
 
     // 테스트 서버 주소
     // val API_URL = "http://dev-api.test.com/"
@@ -25,7 +27,12 @@ class ApplicationClass : Application() {
         lateinit var sSharedPreferences: SharedPreferences
 
         // JWT Token Header 키 값
-        val X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
+        val X_ACCESS_TOKEN = "X_ACCESS_TOKEN"
+
+        // gson객체
+        val gson : Gson = GsonBuilder()
+            .setLenient()
+            .create()
 
         // Retrofit 인스턴스, 앱 실행시 한번만 생성하여 사용합니다.
         lateinit var sRetrofit: Retrofit
@@ -57,6 +64,7 @@ class ApplicationClass : Application() {
             .baseUrl(API_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
+            // .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
 }
