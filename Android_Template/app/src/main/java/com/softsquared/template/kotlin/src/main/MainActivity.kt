@@ -1,12 +1,14 @@
 package com.softsquared.template.kotlin.src.main
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityMainBinding
+import com.softsquared.template.kotlin.src.main.chatting.ChattingFragment
+import com.softsquared.template.kotlin.src.main.chatting.MyPageFragment
 import com.softsquared.template.kotlin.src.main.home.HomeFragment
-import com.softsquared.template.kotlin.src.main.myPage.MyPageFragment
+import com.softsquared.template.kotlin.src.main.location.LocationFragment
+import com.softsquared.template.kotlin.src.main.townLife.TownLifeFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
@@ -21,6 +23,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                     R.id.menu_main_btm_nav_home -> {
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.main_frm, HomeFragment())
+                            .commitAllowingStateLoss()
+                    }
+                    R.id.menu_main_btm_nav_town_life -> {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, TownLifeFragment())
+                            .commitAllowingStateLoss()
+                    }
+                    R.id.menu_main_btm_nav_location -> {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, LocationFragment())
+                            .commitAllowingStateLoss()
+                    }
+                    R.id.menu_main_btm_nav_chatting -> {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, ChattingFragment())
                             .commitAllowingStateLoss()
                     }
                     R.id.menu_main_btm_nav_my_page -> {

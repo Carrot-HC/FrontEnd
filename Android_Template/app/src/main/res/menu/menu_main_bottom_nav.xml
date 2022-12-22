@@ -19,7 +19,7 @@
         android:title="@string/main_btm_nav_town_life_title" />
 
     <item
-        android:id="@+id/menu_main_btm_location"
+        android:id="@+id/menu_main_btm_nav_location"
         android:icon="@drawable/icon_btm_nav_location"
         app:showAsAction="always"
         android:enabled="true"
@@ -27,7 +27,7 @@
         android:title="@string/main_btm_nav_location_title" />
 
     <item
-        android:id="@+id/menu_main_btm_chatting"
+        android:id="@+id/menu_main_btm_nav_chatting"
         android:icon="@drawable/icon_btm_nav_chatting"
         app:showAsAction="always"
         android:enabled="true"
