@@ -7,7 +7,6 @@ import android.view.View
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
 import com.softsquared.template.kotlin.databinding.FragmentMyPageBinding
-import com.softsquared.template.kotlin.src.main.home.HomeService
 import com.softsquared.template.kotlin.src.main.myPage.MyPageFragmentInterface
 import com.softsquared.template.kotlin.src.main.myPage.MyPageService
 import com.softsquared.template.kotlin.src.main.myPage.ProfileActivity

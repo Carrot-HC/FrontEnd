@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_main_btm_nav_home"
+        android:icon="@drawable/category_icon8"
+        android:title="알바"
+        android:enabled="true"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_main_btm_nav_town_life"
+        android:icon="@drawable/category_icon11"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="과외/클래스" />
+
+    <item
+        android:id="@+id/menu_main_btm_nav_location"
+        android:icon="@drawable/category_icon13"
+        android:enabled="true"
+        app:showAsAction="always"
+
+        android:title="농수산물" />
+
+    <item
+        android:id="@+id/menu_main_btm_nav_chatting"
+        android:icon="@drawable/category_icon13"
+        android:enabled="true"
+        app:showAsAction="always"
+        android:title="부동산" />
+
+    <item
+        android:id="@+id/menu_main_btm_nav"
+        android:icon="@drawable/category_icon13"
+        android:enabled="true"
+        app:showAsAction="always"
+        android:title="중고차" />
+    
+
+    <item
+        android:padding="10dp"
+        android:enabled="true"
+        android:icon="@drawable/category_icon13"
+        app:showAsAction="always"
+        android:title="내 물건 팔기" />
+</menu>
