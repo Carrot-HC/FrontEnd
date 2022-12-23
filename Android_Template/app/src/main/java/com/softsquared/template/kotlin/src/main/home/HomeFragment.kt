@@ -28,8 +28,6 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
 
 
-
-
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -72,7 +70,7 @@ class HomeFragment : Fragment() {
 
         val homeService = retrofit.create(HomeService2::class.java)
 
-        homeService.getHome(5, "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2NzE3MTQ4NjcsImV4cCI6MTY3MzE4NjA5Nn0.59EeKiJGnNZ8S2L1hJxYqShSrmT30w0PWyxFsZS9By8")
+        homeService.getHome(4, "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4Ijo0LCJpYXQiOjE2NzE3NTM1MjgsImV4cCI6MTY3MzIyNDc1N30.wnSucJ0011DLb32WclUie4d1Y4MXDJJzE9DrIeXYKEA")
             .enqueue(object : Callback<HomeResponse> {
                 override fun onResponse(call: Call<HomeResponse>, response: Response<HomeResponse>) {
                     Log.d("home", response.body().toString())

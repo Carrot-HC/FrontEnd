@@ -1,11 +1,13 @@
 package com.softsquared.template.kotlin.src.main.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityHomeListBinding
@@ -27,6 +29,11 @@ class HomeListActivity : AppCompatActivity() {
         binding = ActivityHomeListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.homeListBack.setOnClickListener {
+            val intent = Intent(this, HomeFragment::class.java)
+            startActivity(intent)
+        }
+
         val product = intent.getIntExtra("productIdx", 0)
         Log.d("fff", product.toString())
 
@@ -38,8 +45,8 @@ class HomeListActivity : AppCompatActivity() {
 
         val contentService = retrofit.create(ContentService::class.java)
         contentService.getContent(
-            5,
-            "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2NzE3MTQ4NjcsImV4cCI6MTY3MzE4NjA5Nn0.59EeKiJGnNZ8S2L1hJxYqShSrmT30w0PWyxFsZS9By8",
+            4,
+            "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4Ijo0LCJpYXQiOjE2NzE3NTM1MjgsImV4cCI6MTY3MzIyNDc1N30.wnSucJ0011DLb32WclUie4d1Y4MXDJJzE9DrIeXYKEA",
             product
         )
             .enqueue(object : Callback<ContentResponse> {
@@ -62,6 +69,10 @@ class HomeListActivity : AppCompatActivity() {
                             binding.homeListTimeTv.text = data.updateAt
                             binding.homeThingContentTv.text = data.content
                             binding.homeThingLikeTv.text = "관심 " + data.interestCount.toString()
+
+                            Glide.with(binding.sliderViewPager.context)
+                                .load(data.image[0])
+                                .into(binding.sliderViewPager)
 
                             //val img: List<String> = mutableListOf(data.image[0], data.image[1],data.image[2])
 
