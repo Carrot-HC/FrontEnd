@@ -1,9 +1,7 @@
 package com.softsquared.template.kotlin.src.main.myPage
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityProfileBinding
 import com.softsquared.template.kotlin.src.main.myPage.models.UserMannerReview
@@ -18,6 +16,11 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(ActivityProfileBind
 
         // 유저 프로필 받아오기 (닉네임)
         ProfileService(this).tryGetUserProfile()
+
+        // 뒤로 가기
+        binding.myProfileTopBtnBack.setOnClickListener{
+            onBackPressed()
+        }
 
     }
 
